@@ -4,7 +4,7 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Nav from './components/Nav.jsx';
-import Users from "./pages/Users";
+import Users from "./pages/User.jsx";
 function App() {
   return (
     <Router>
