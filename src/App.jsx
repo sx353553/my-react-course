@@ -8,7 +8,6 @@ import Users from "./pages/User.jsx";
 function App() {
   return (
     <Router>
-     <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/users" element={<Users />} />

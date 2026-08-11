@@ -1,20 +1,31 @@
 import { useParams } from 'react-router-dom'
-import React, { usEffect } from 'react' 
-import axios from axios
+import React, { useEffect, useState } from 'react' 
+import axios from 'axios'
 
 function Users () {
   const { id } = useParams();
+  const [user, setUser] = useState({});
 
   async function fetchUser() {
-     await axios.get(`https://jsonplaceholder.typicode.com/users/${id}` )
+    const { data } = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}` )
+    setUser(data)
   } 
   
 
   useEffect(() => {
-
+    fetchUser();
   }, [])
+ 
 
-return <h1>{id}</h1>
+return (
+  <div>
+    <link to="/">Go back</link>
+    <p>{user.id}</p>
+    <p>{user.name}</p>
+    <p>{user.email}</p>
+    <p>{user.username}</p>
+ </div>
+)
 }
 
 export default Users
