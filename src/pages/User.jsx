@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react' 
 import axios from 'axios'
 
@@ -19,7 +19,7 @@ function Users () {
 
 return (
   <div>
-    <link to="/">Go back</link>
+    <Link to="/">Go back</Link>
     <p>{user.id}</p>
     <p>{user.name}</p>
     <p>{user.email}</p>
